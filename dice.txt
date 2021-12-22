@@ -1,0 +1,43 @@
+let aScore = 0;
+let bScore = 0;
+
+let aPos = 10;
+let bPos = 8;
+
+let die = 0;
+let rollCount = 0;
+
+const rollDie = () => {
+
+  let rollVal = 0;
+
+  for (let i = 0; i< 3; i++) {
+
+    if (die === 100) {
+      die = 1;
+      rollVal += 1;
+    } else {
+      die++;
+      rollVal += die;
+    }
+
+  } 
+  rollCount +=3;
+  return rollVal;
+
+}
+
+
+const playGame = () => {
+
+while (true) {
+
+  let r = aPos + rollDie();
+
+  r aPos = (aPos + rollDie()) % 10;
+  aScore += aPos;
+  if (aScore >= 1000) return bScore * rollCount;
+
+bPos = (bPos + rollDie()) % 10;
+  bScore += bPos;
+  if (bScore >= 1000) return aScore * rollCount;
